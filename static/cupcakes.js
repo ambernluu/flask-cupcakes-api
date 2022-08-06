@@ -1,13 +1,11 @@
 const BASE_URL = "http://localhost:5000/api";
 
 
-/** given data about a cupcake, generate html */
-
 function generateCupcakeHTML(cupcake) {
   return `
     <div data-cupcake-id=${cupcake.id}>
       <li>
-        ${cupcake.flavor} / ${cupcake.size} / ${cupcake.rating}
+        ${cupcake.flavor} | ${cupcake.size} | ${cupcake.rating}
         <button class="delete-button">X</button>
       </li>
       <img class="Cupcake-img"
@@ -34,7 +32,7 @@ async function showInitialCupcakes() {
 
 $("#new-cupcake-form").on("submit", async function (evt) {
   evt.preventDefault();
-
+  alert("YOU SUBMITTED");
   let flavor = $("#form-flavor").val();
   let rating = $("#form-rating").val();
   let size = $("#form-size").val();
